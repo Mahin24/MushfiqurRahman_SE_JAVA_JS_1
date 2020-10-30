@@ -7,7 +7,7 @@ export default class Landing extends Component {
     render() {
         return (
             <div>
-                Langing
+                Landing
             </div>
         )
     }

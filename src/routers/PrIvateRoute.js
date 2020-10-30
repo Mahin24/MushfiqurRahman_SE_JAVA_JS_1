@@ -1,5 +1,7 @@
 import AddProduct from "../components/dashboard/AddProduct";
+import EditProduct from "../components/dashboard/EditProduct";
 import Home from "../components/dashboard/Home";
+import ProductList from "../components/dashboard/ProductList";
 import Product from "../components/dashboard/ProductList";
 
 const dashboardRoutes = [
@@ -12,7 +14,7 @@ const dashboardRoutes = [
     {
       path: "/product",
       name: "Product List",
-      component: Product,
+      component: ProductList,
       layout: "/admin"
     },
     {
@@ -24,7 +26,7 @@ const dashboardRoutes = [
     {
       path: "/edit-product/:productId",
       name: "Dashboard",
-      component: Product,
+      component: EditProduct,
       layout: "/admin"
     }
 ]

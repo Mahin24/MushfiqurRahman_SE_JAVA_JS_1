@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
-import routes from "../routers/PrivateRoute";
+import routes from "../routers/PrIvateRoute";
 
 import Siddebar from "../components/common/Sidebar";
 import AdminNavbar from "../components/common/Navbar";

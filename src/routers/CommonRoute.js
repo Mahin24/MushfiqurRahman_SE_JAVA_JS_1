@@ -3,7 +3,7 @@ import Landing from "../components/pages/Landing";
 
 const commonRouter = [
   {
-      path: "",
+      path: "/",
       name: "About",
       component: Landing,
       layout: "/",
@@ -14,7 +14,6 @@ const commonRouter = [
       name: "About",
       component: About,
       layout: "/",
-      exact: true
     }
 ];
 

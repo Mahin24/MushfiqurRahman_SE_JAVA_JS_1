@@ -41,7 +41,7 @@ class Admin extends Component {
         <>
           <div id="wrapper">
             <Siddebar></Siddebar>
-            <div id="content-wrapper" classNameName="d-flex flex-column">
+            <div id="content-wrapper" className="d-flex flex-column">
               <div id="content">
                 <AdminNavbar></AdminNavbar>
                 <div className="container-fluid">

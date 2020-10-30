@@ -39,7 +39,7 @@ function Sidebar() {
                 </li>
 
                 <li class="nav-item">
-                    <Link class="nav-link" to="/admin/">
+                    <Link class="nav-link" to="/admin/add-product">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Add Product</span></Link>
                 </li>

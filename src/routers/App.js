@@ -23,7 +23,7 @@ class App extends Component {
                 <Route path="/admin" render={props => <AdminLayout {...props} />} ></Route>
                 <Route path="/auth" render={props => <AuthLayout {...props} />}></Route>
                 <Route path="/" render={props => <CommonRouter {...props} />}></Route>
-                <Redirect from="/" to="/auth/login" /> 
+                <Redirect from="*" to="/auth/login" /> 
             </Switch>
         )
     }

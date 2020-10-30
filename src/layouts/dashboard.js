@@ -27,11 +27,19 @@ class Admin extends Component {
 
     render() {
         return (
-            <div id="dashboard">
-                <AdminNavbar></AdminNavbar>
-                <Siddebar></Siddebar>
-                <Switch>{this.getRoutes(routes)}</Switch>
+          <>
+            <div id="wrapper">
+              <Siddebar></Siddebar>
+              <div id="content-wrapper" className="d-flex flex-column">
+                <div id="content">
+                  <AdminNavbar></AdminNavbar>
+                  <div class="container-fluid">
+                        <Switch>{this.getRoutes(routes)}</Switch>
+                  </div>
+                </div>
+              </div>
             </div>
+          </>
         )
     }
 }

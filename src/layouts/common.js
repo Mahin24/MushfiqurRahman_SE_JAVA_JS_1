@@ -13,10 +13,10 @@ class Common extends Component {
       return routes.map((prop, key) => {  
         if (prop.layout === "/") {
           return(<Route
+            exact
             path={prop.path}
             component={prop.component}
             key={key}
-            exact = {prop.exact}
           />)
         } else {
           return null;

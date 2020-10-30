@@ -1,6 +1,38 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, useState} from 'react';
+import {Link} from "react-router-dom";
  
 function LogIn() {
+    const [username, setUserName]= useState("");
+    const [password, setPassword]= useState("");
+    const [errorMessage, setErrorMessage] = useState("")
+
+    const changeUserName = (e) => {
+        let value = e.target.value;
+        setUserName(value);
+    };
+
+    const changePassword = (e) => {
+        let value = e.target.value;
+        setPassword(value);
+    }
+
+    const userLogin = (e) => {
+        e.preventDefault();
+        if (username && password) {
+            let users =  JSON.parse(localStorage.getItem("users")) || [];
+            let user = users.find(u => (u.email === username && u.password === password ));
+
+            if (user) {
+                localStorage.setItem("myProfile", JSON.stringify(user));
+                window.location="/admin/"
+            } else {
+                setErrorMessage("Email or password is incorrect!");
+            }
+        } else {
+            setErrorMessage("Email or password is invalid!");
+        }
+    }
+
     return (
         <Fragment>
             <div className="container">
@@ -18,29 +50,28 @@ function LogIn() {
                             <div className="text-center">
                                 <h1 className="h4 text-gray-900 mb-4">Welcome Back!</h1>
                             </div>
-                            <form className="user">
+                            <form className="user" onSubmit={userLogin}>
                                 <div className="form-group">
-                                <input type="email" className="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address..."/>
+                                <input type="email" className="form-control form-control-user" id="exampleInputEmail" 
+                                value={username} onChange={changeUserName}
+                                aria-describedby="emailHelp" placeholder="Enter Email Address..."/>
                                 </div>
                                 <div className="form-group">
-                                <input type="password" className="form-control form-control-user" id="exampleInputPassword" placeholder="Password"/>
+                                <input type="password" className="form-control form-control-user"
+                                value={password} onChange={changePassword}
+                                id="exampleInputPassword" placeholder="Password"/>
                                 </div>
-                                <div className="form-group">
-                                <div className="custom-control custom-checkbox small">
-                                    <input type="checkbox" className="custom-control-input" id="customCheck"/>
-                                    <label className="custom-control-label" for="customCheck">Remember Me</label>
-                                </div>
-                                </div>
-                                <a href="index.html" className="btn btn-primary btn-user btn-block">
+                                
+                                <button type="submit" className="btn btn-primary btn-user btn-block mt-5 mb-3">
                                 Login
-                                </a>
+                                </button>
+                                <div className="text-center text-danger">
+                                    {errorMessage}
+                                </div>
                             </form>
                             <hr/>
                             <div className="text-center">
-                                <a className="small" href="forgot-password.html">Forgot Password?</a>
-                            </div>
-                            <div className="text-center">
-                                <a className="small" href="register.html">Create an Account!</a>
+                                <Link to="/auth/signup" className="small">Create an Account!</Link>
                             </div>
                             </div>
                         </div>

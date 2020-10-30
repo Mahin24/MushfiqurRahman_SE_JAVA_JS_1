@@ -12,6 +12,7 @@ class Auth extends Component {
         return routes.map((prop, key) => {
           if (prop.layout === "/auth") {
             return(<Route
+              exact
               path={prop.layout + prop.path}
               component={prop.component}
               key={key}
@@ -22,12 +23,21 @@ class Auth extends Component {
         });
     };
 
+    checkUserLogin = () => {
+      let myProfile =localStorage.getItem("myProfile");
+
+      if (myProfile) {
+        window.location = "/admin/"
+      }
+    }
+
     render() {
-        return (
-            <div>
-                <Switch>{this.getRoutes(routes)}</Switch>
-            </div>
-        )
+      this.checkUserLogin()
+      return (
+          <div>
+              <Switch>{this.getRoutes(routes)}</Switch>
+          </div>
+      )
     }
 }
 

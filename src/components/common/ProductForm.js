@@ -21,9 +21,9 @@ function productForm(props) {
                         <div class="form-group">
                             <label htmlFor="exampleFormControlSelect1" >Product Category</label>
                             <select class="form-control" name="product_category" onChange={chnageDetails}>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
+                                <option value="1">RAM</option>
+                                <option value="2">MOTHERBOARD</option>
+                                <option value="3">GRAPHICS CARD</option>
                             </select>
                         </div>
                     </div>

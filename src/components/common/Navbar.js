@@ -1,7 +1,7 @@
 import React, {Fragment} from 'react';
 
 function Navbar() {
-
+    const myProfile = JSON.parse(localStorage.getItem('myProfile'));
     const logout = () => {
         localStorage.removeItem("myProfile");
         setTimeout(() => {
@@ -10,6 +10,7 @@ function Navbar() {
     };
 
     return (
+        
         <Fragment>
         <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
             <ul class="navbar-nav ml-auto">
@@ -23,7 +24,7 @@ function Navbar() {
                 {/* <!-- Nav Item - User Information --> */}
             <li className="nav-item dropdown no-arrow">
                 <a className="nav-link dropdown-toggle" href="#" id="userDropdown"  role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <span className="mr-2 d-none d-lg-inline text-gray-600 small">Valerie Luna</span>
+    <span className="mr-2 d-none d-lg-inline text-gray-600 small">{myProfile.firstName +" " + myProfile.lastName}</span>
                     <img className="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60" />
                 </a>
             {/* <!-- Dropdown - User Information --> */}

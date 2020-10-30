@@ -1,4 +1,5 @@
-import React, {Fragment} from 'react'
+import React, {Fragment} from 'react';
+import {Link} from "react-router-dom";
 
 function Sidebar() {
     return (
@@ -6,21 +7,21 @@ function Sidebar() {
             <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/* <!-- Sidebar - Brand --> */}
-                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <Link to="/admin/" class="sidebar-brand d-flex align-items-center justify-content-center">
                     <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                     </div>
                     <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-                </a>
+                </Link>
 
                 {/* <!-- Divider --> */}
                 <hr class="sidebar-divider my-0"/>
 
                 {/* <!-- Nav Item - Dashboard --> active */}
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <Link class="nav-link" to="/admin/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span></a>
+                    <span>Dashboard</span></Link>
                 </li>
 
                 {/* <!-- Divider --> */}
@@ -32,15 +33,15 @@ function Sidebar() {
                 </div>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <Link class="nav-link" to='/admin/'>
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Product List</span></a>
+                    <span>Product List</span></Link>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <Link class="nav-link" to="/admin/">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Add Product</span></a>
+                    <span>Add Product</span></Link>
                 </li>
 
                 {/* <!-- Divider --> */}

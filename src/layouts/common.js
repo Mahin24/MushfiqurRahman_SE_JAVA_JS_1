@@ -11,7 +11,7 @@ class Common extends Component {
 
     getRoutes = routes => {
       return routes.map((prop, key) => {  
-        if (prop.layout === "/") {
+        if (prop.layout === "/" && prop.path === "/about") {
           return(<Route
             exact
             path={prop.path}

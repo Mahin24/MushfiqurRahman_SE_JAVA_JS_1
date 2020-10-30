@@ -30,10 +30,10 @@ class Admin extends Component {
           <>
             <div id="wrapper">
               <Siddebar></Siddebar>
-              <div id="content-wrapper" className="d-flex flex-column">
+              <div id="content-wrapper" classNameName="d-flex flex-column">
                 <div id="content">
                   <AdminNavbar></AdminNavbar>
-                  <div class="container-fluid">
+                  <div className="container-fluid">
                         <Switch>{this.getRoutes(routes)}</Switch>
                   </div>
                 </div>
